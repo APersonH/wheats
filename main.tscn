@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://fg4ym4oapou1"]
+
+[ext_resource type="PackedScene" uid="uid://d2gmt4pclfogo" path="res://player.tscn" id="1_dvv4q"]
+[ext_resource type="Texture2D" uid="uid://cuc3e4lua6gs3" path="res://test_tile_map.png" id="2_5ij6x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nkvk"]
+texture = ExtResource("2_5ij6x")
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+0:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_58fhu"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Terrain 1"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_2/name = "Terrain 2"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
+terrain_set_0/terrain_3/name = "Terrain 3"
+terrain_set_0/terrain_3/color = Color(0.375, 0.5, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_7nkvk")
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_dvv4q")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_58fhu")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -65535, 0, 0, -65536, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -196591, 0, 0, -196590, 0, 0, -196589, 0, 0, -131053, 0, 0, -131052, 0, 0, -196588, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -196587, 0, 0, -327660, 0, 0, -327659, 0, 0, -327658, 0, 0, -393194, 0, 0, -393195, 0, 0, -458731, 0, 0, -458732, 0, 0, -458730, 0, 0, -524267, 0, 0, -524266, 0, 0, -589803, 0, 0, -655339, 0, 0, -589802, 0, 0, -655338, 0, 0, -524268, 0, 0, -589804, 0, 0, -655340, 0, 0, -720876, 0, 0, -655341, 0, 0, -720877, 0, 0, -786413, 0, 0)

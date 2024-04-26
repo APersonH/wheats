@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2gmt4pclfogo"]
+
+[ext_resource type="Texture2D" uid="uid://ulirylmknegj" path="res://player_placeholder.tres" id="1_etx6k"]
+[ext_resource type="Script" path="res://player.gd" id="1_wm1r0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oa88e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_etx6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_wm1r0")
+speed = 100
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(10, 20)
+sprite_frames = SubResource("SpriteFrames_oa88e")
