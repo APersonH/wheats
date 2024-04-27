@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdigfldeqxm2x"
-path="res://.godot/imported/allsprites.png-a369d24959953fd8062f0e91e7fe2df8.ctex"
+uid="uid://droquixy6i317"
+path="res://.godot/imported/æble.png-c593b5b3d31fc141162beab3341a5f8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/allsprites.png"
-dest_files=["res://.godot/imported/allsprites.png-a369d24959953fd8062f0e91e7fe2df8.ctex"]
+source_file="res://textures/æble.png"
+dest_files=["res://.godot/imported/æble.png-c593b5b3d31fc141162beab3341a5f8e.ctex"]
 
 [params]
 

@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cattodwcy6h47"]
+[gd_scene load_steps=8 format=3 uid="uid://cattodwcy6h47"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_lh847"]
+[ext_resource type="Texture2D" uid="uid://bvj1b78n18ppk" path="res://textures/kartoffel.png" id="2_let3i"]
 [ext_resource type="Texture2D" uid="uid://cpr43g3x17ga3" path="res://textures/bstile1.png" id="2_ywkyl"]
-[ext_resource type="Texture2D" uid="uid://c8cm11bup2jd" path="res://textures/bstile2.png" id="3_yd0ml"]
-[ext_resource type="Texture2D" uid="uid://cpity0eggd05k" path="res://textures/bstile3.png" id="4_ftp85"]
+[ext_resource type="Texture2D" uid="uid://droquixy6i317" path="res://textures/æble.png" id="3_a2tor"]
+[ext_resource type="Texture2D" uid="uid://dy4kuav0qd4ge" path="res://textures/steak.png" id="4_3vqax"]
 [ext_resource type="Texture2D" uid="uid://5efadu6lsurh" path="res://textures/bstile4.png" id="5_l5w6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aptxs"]
 
 [node name="Item" type="StaticBody2D" groups=["items"]]
 script = ExtResource("1_lh847")
-type_sprites = [ExtResource("2_ywkyl"), ExtResource("3_yd0ml"), ExtResource("4_ftp85"), ExtResource("5_l5w6d")]
+type_sprites = [ExtResource("2_let3i"), ExtResource("3_a2tor"), ExtResource("4_3vqax"), ExtResource("5_l5w6d")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_aptxs")

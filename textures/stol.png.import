@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdigfldeqxm2x"
-path="res://.godot/imported/allsprites.png-a369d24959953fd8062f0e91e7fe2df8.ctex"
+uid="uid://d4cevkmhjdgir"
+path="res://.godot/imported/stol.png-36c6168ee87818f85f8031acdbd92695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/allsprites.png"
-dest_files=["res://.godot/imported/allsprites.png-a369d24959953fd8062f0e91e7fe2df8.ctex"]
+source_file="res://textures/stol.png"
+dest_files=["res://.godot/imported/stol.png-36c6168ee87818f85f8031acdbd92695.ctex"]
 
 [params]
 
