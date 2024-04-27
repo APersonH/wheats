@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl4vgs5nrunwo"]
+
+[ext_resource type="Texture2D" uid="uid://bipa4thrywp1m" path="res://textures/bagerkringle.png" id="1_2b1y4"]
+[ext_resource type="Script" path="res://scenes/npc.gd" id="1_gi3nj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_236su"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2b1y4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mks2p"]
+radius = 30.0
+
+[node name="NPC" type="PathFollow2D"]
+script = ExtResource("1_gi3nj")
+speed = 20
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_236su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mks2p")
