@@ -7,7 +7,7 @@ enum Type {
 	WHEAT,
 }
 
-var type_values = {
+@export var type_values = {
 	Type.POTATO: 5,
 	Type.APPLE: 5,
 	Type.STEAK: 10,

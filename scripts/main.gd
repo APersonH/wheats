@@ -2,9 +2,13 @@ extends Node
 
 @export var number_of_npcs: int
 @export var npc_scene: PackedScene
-@export var hunger: int
-@export var currentTileMap: TileMap
+@export var number_of_items: int
 @export var item_scene: PackedScene
+
+@export var currentTileMap: TileMap
+
+@export var hunger: int
+@export var piety: int
 
 var screen_size: Vector2
 var returnPos: Vector2
@@ -12,12 +16,14 @@ var returnPos: Vector2
 var npc_list: Array
 
 func _ready():
-	$HungerTimer.start()
-	$ItemTimer.start()
-	screen_size = get_viewport().get_visible_rect().size
+	$HUD.show_start_screen()
+	
+func load_npcs(amount):
+	npc_list = []
+	
 	var npc_path = currentTileMap.get_node("NPCPath")
 
-	for i in range(number_of_npcs):
+	for i in range(amount):
 		var npc = npc_scene.instantiate()
 		if npc_path == null:
 			print("No NPC path found")
@@ -29,9 +35,32 @@ func _ready():
 
 		npc_list.append(npc)
 
+func spawn_items(amount):
+	var item = item_scene.instantiate()
+	
+	var item_spawn_loc = currentTileMap.get_node("ItemPath/ItemSpawnLocation")
+	if item_spawn_loc == null:
+		print("No item spawn location found")
+		return
+	item_spawn_loc.progress_ratio = randf()
+
+	item.position = item_spawn_loc.position
+
+	item.choose_type()
+
+	add_child(item)
+
 func _on_hunger_timer_timeout():
-	hunger -= 1
+	hunger += 1
 	$HUD.update_hunger(hunger)
+
+func update_hunger(value):
+	hunger += value
+	$HUD.update_hunger(hunger)
+
+func update_piety(value):
+	piety += value
+	$HUD.update_piety(piety)
 
 func _on_player_change_scene(dest, pos):
 	if pos != null: returnPos = pos
@@ -48,24 +77,23 @@ func _on_player_change_scene(dest, pos):
 			$Player.position = returnPos
 		else:
 			$Player.position = Vector2.ZERO
+	
+	load_npcs(number_of_npcs)
 
 func _on_item_timer_timeout():
-	var item = item_scene.instantiate()
-	
-	var item_spawn_loc = currentTileMap.get_node("ItemPath/ItemSpawnLocation")
-	if item_spawn_loc == null:
-		print("No item spawn location found")
-		return
-	item_spawn_loc.progress_ratio = randf()
-
-	item.position = item_spawn_loc.position
-
-	item.choose_type()
-
-	add_child(item)
+	spawn_items(1)
 
 func get_current_tilemap():
 	return currentTileMap
 
 func get_npc_list():
 	return npc_list
+
+func _on_hud_start_game():
+	$HUD.update_hunger(hunger)
+	$HUD.update_piety(piety)
+	$HungerTimer.start()
+	$ItemTimer.start()
+	screen_size = get_viewport().get_visible_rect().size
+	load_npcs(number_of_npcs)
+	spawn_items(number_of_items)
