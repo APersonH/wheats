@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://fg4ym4oapou1"]
+[gd_scene load_steps=7 format=3 uid="uid://fg4ym4oapou1"]
 
 [ext_resource type="PackedScene" uid="uid://d2gmt4pclfogo" path="res://scenes/player.tscn" id="1_dvv4q"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wnpfd"]
 [ext_resource type="PackedScene" uid="uid://cattodwcy6h47" path="res://scenes/item.tscn" id="2_bwfkv"]
+[ext_resource type="PackedScene" uid="uid://cl4vgs5nrunwo" path="res://scenes/npc.tscn" id="2_ffnf0"]
 [ext_resource type="PackedScene" uid="uid://03tpi2eohgxy" path="res://scenes/hud.tscn" id="3_ewdw6"]
 [ext_resource type="PackedScene" uid="uid://xlcsyx7dvnfe" path="res://scenes/main_map.tscn" id="4_ucws2"]
 
 [node name="Main" type="Node" node_paths=PackedStringArray("currentTileMap")]
 script = ExtResource("1_wnpfd")
+number_of_npcs = 20
+npc_scene = ExtResource("2_ffnf0")
 hunger = 9001
 currentTileMap = NodePath("MainTileMap")
 item_scene = ExtResource("2_bwfkv")

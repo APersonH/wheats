@@ -1,5 +1,7 @@
 extends Node
 
+@export var number_of_npcs: int
+@export var npc_scene: PackedScene
 @export var hunger: int
 @export var currentTileMap: TileMap
 @export var item_scene: PackedScene
@@ -11,6 +13,17 @@ func _ready():
 	$HungerTimer.start()
 	$ItemTimer.start()
 	screen_size = get_viewport().get_visible_rect().size
+	var npc_path = currentTileMap.get_node("NPCPath")
+
+	for i in range(number_of_npcs):
+		var npc = npc_scene.instantiate()
+		if npc_path == null:
+			print("No NPC path found")
+			return
+
+		npc_path.add_child(npc)
+		npc.progress_ratio = randf()
+		print("Added NPC number " + str(i) + " at " + str(npc.position))
 
 func _on_hunger_timer_timeout():
 	hunger -= 1
@@ -46,3 +59,6 @@ func _on_item_timer_timeout():
 	item.choose_type()
 
 	add_child(item)
+
+func get_current_tilemap():
+	return currentTileMap
