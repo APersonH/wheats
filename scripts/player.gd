@@ -51,5 +51,13 @@ func _on_area_2d_body_shape_entered(
 			change_scene.emit(dest, pos)
 
 	if body.is_in_group("items"):
+		var val = body.get_item_value()
 		body.queue_free()
-		print("Item collected")
+		get_parent().hunger += val
+		print("Item collected " + str(val))
+
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			print(collision.get_collider().get_name())
+			if collision.get_collider().is_in_group("npc"):
+				print("NPC collision")

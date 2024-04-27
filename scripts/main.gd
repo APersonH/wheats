@@ -9,6 +9,8 @@ extends Node
 var screen_size: Vector2
 var returnPos: Vector2
 
+var npc_list: Array
+
 func _ready():
 	$HungerTimer.start()
 	$ItemTimer.start()
@@ -20,10 +22,12 @@ func _ready():
 		if npc_path == null:
 			print("No NPC path found")
 			return
-
+		
 		npc_path.add_child(npc)
 		npc.progress_ratio = randf()
 		print("Added NPC number " + str(i) + " at " + str(npc.position))
+
+		npc_list.append(npc)
 
 func _on_hunger_timer_timeout():
 	hunger -= 1
@@ -62,3 +66,6 @@ func _on_item_timer_timeout():
 
 func get_current_tilemap():
 	return currentTileMap
+
+func get_npc_list():
+	return npc_list

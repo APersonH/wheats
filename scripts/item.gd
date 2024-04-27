@@ -28,3 +28,6 @@ func _process(delta):
 func choose_type():
 	current_type = randi_range(0, Type.size() - 1)
 	$Sprite2D.texture = type_sprites[current_type]
+
+func get_item_value():
+	return type_values[current_type]
