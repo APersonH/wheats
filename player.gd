@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 400 
 
@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
@@ -24,4 +24,6 @@ func _process(delta):
 	if velocity.length() != 0:
 		velocity = velocity.normalized() * speed
 	
-	position += velocity * delta
+	move_and_slide()
+
+
