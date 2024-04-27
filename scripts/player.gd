@@ -34,6 +34,7 @@ func _on_area_2d_body_shape_entered(
 	body_shape_index: int,
 	local_shape_index: int
 	):
+
 	if body is TileMap:
 		var cell_pos = body.get_coords_for_body_rid(body_rid)
 		var data = body.get_cell_tile_data(body.get_layer_for_body_rid(body_rid), cell_pos)
@@ -48,3 +49,7 @@ func _on_area_2d_body_shape_entered(
 				pos = pos + pos_diff.normalized() * 2
 			print("Emitting: " + dest)
 			change_scene.emit(dest, pos)
+
+	if body.is_in_group("items"):
+		body.queue_free()
+		print("Item collected")
