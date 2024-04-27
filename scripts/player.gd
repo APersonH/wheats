@@ -17,11 +17,16 @@ func _process(delta):
 		velocity.y -= 1
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
+		$AnimatedSprite2D.flip_h = false
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
+		$AnimatedSprite2D.flip_h = true
 	
 	if velocity.length() != 0:
 		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("idle")
 	
 	move_and_slide()
 
@@ -56,8 +61,6 @@ func _on_area_2d_body_shape_entered(
 		get_parent().hunger += val
 		print("Item collected " + str(val))
 
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			print(collision.get_collider().get_name())
-			if collision.get_collider().is_in_group("npc"):
-				print("NPC collision")
+		for i in get_parent().get_npc_list():
+			if i.get_node("Area2D").overlaps_body(self):
+				print("Discorvered")
