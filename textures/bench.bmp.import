@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brt8utqaqappf"
-path="res://.godot/imported/bagergå.png-ae1eff4833a2e255f7d0fdb7a8b7372b.ctex"
+uid="uid://2dxrmq6x7xll"
+path="res://.godot/imported/bench.bmp-03cdceeb8845babbad2a301fadc0335d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/bagergå.png"
-dest_files=["res://.godot/imported/bagergå.png-ae1eff4833a2e255f7d0fdb7a8b7372b.ctex"]
+source_file="res://textures/bench.bmp"
+dest_files=["res://.godot/imported/bench.bmp-03cdceeb8845babbad2a301fadc0335d.ctex"]
 
 [params]
 
