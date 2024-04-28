@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmb4mc2onh1l"]
+
+[ext_resource type="Texture2D" uid="uid://b35jrf17pyf72" path="res://textures/hvede.png" id="1_on5he"]
+[ext_resource type="Script" path="res://scenes/start_screen.gd" id="1_posba"]
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource("1_posba")
+
+[node name="StartScreenBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_on5he")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.5
+offset_top = -380.0
+offset_right = 276.5
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "Start Game"
+
+[node name="StartScreenTitle" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -393.5
+offset_top = -290.0
+offset_right = 393.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "Will we eat 
+wheats?"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

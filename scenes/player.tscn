@@ -44,7 +44,7 @@ zoom = Vector2(8, 8)
 scale = Vector2(12, 14)
 sprite_frames = SubResource("SpriteFrames_oa88e")
 animation = &"idle"
-frame_progress = 0.596187
+frame_progress = 0.494358
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_os43n")

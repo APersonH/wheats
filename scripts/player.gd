@@ -31,7 +31,7 @@ func _process(delta):
 	move_and_slide()
 
 	if Input.is_action_pressed("debug_input"):
-		get_parent().print_tree()
+		get_parent().advance_time()
 
 func _on_area_2d_body_shape_entered(
 	body_rid: RID,

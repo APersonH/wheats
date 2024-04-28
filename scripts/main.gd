@@ -1,5 +1,7 @@
 extends Node
 
+enum TimeOfDay {Morning, Afternoon, Evening, Night}
+
 @export var number_of_npcs: int
 @export var npc_scene: PackedScene
 @export var number_of_items: int
@@ -10,14 +12,22 @@ extends Node
 @export var hunger: int
 @export var piety: int
 
+var current_time: TimeOfDay
+
 var screen_size: Vector2
 var returnPos: Vector2
 
 var npc_list: Array
 
 func _ready():
-	$HUD.show_start_screen()
-	
+	start_game()
+
+func _process(delta):
+	if hunger >= 100:
+		change_scene("game_over", Vector2.ZERO)
+	if piety <= 0:
+		change_scene("game_over", Vector2.ZERO)
+
 func load_npcs(amount):
 	npc_list = []
 	
@@ -62,7 +72,7 @@ func update_piety(value):
 	piety += value
 	$HUD.update_piety(piety)
 
-func _on_player_change_scene(dest, pos):
+func change_scene(dest, pos):
 	if pos != null: returnPos = pos
 	print("Recieved: " + dest)
 	var new_tm = load("res://scenes/" + dest + ".tscn").instantiate()
@@ -89,11 +99,16 @@ func get_current_tilemap():
 func get_npc_list():
 	return npc_list
 
-func _on_hud_start_game():
+func start_game():
 	$HUD.update_hunger(hunger)
 	$HUD.update_piety(piety)
 	$HungerTimer.start()
 	$ItemTimer.start()
+	current_time = TimeOfDay.Morning
 	screen_size = get_viewport().get_visible_rect().size
 	load_npcs(number_of_npcs)
 	spawn_items(number_of_items)
+
+func advance_time():
+	current_time += 1
+	$HUD.update_time_of_day(TimeOfDay.keys()[current_time])
