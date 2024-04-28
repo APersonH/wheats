@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpax167rl720k"
-path="res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"
+uid="uid://b2xyq1xfyg374"
+path="res://.godot/imported/bench.bmp-03cdceeb8845babbad2a301fadc0335d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/hvede.png"
-dest_files=["res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"]
+source_file="res://textures/bench.bmp"
+dest_files=["res://.godot/imported/bench.bmp-03cdceeb8845babbad2a301fadc0335d.ctex"]
 
 [params]
 

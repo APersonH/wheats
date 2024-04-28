@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpax167rl720k"
-path="res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"
+uid="uid://bgpfty0pm57b0"
+path="res://.godot/imported/underworld.bmp-3f595f2027e354f93116df50a30932be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/hvede.png"
-dest_files=["res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"]
+source_file="res://textures/underworld.bmp"
+dest_files=["res://.godot/imported/underworld.bmp-3f595f2027e354f93116df50a30932be.ctex"]
 
 [params]
 

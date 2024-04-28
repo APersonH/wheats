@@ -42,19 +42,20 @@ func load_npcs(amount):
 		npc_list.append(npc)
 
 func spawn_items(amount):
-	var item = item_scene.instantiate()
-	
-	var item_spawn_loc = currentTileMap.get_node("ItemPath/ItemSpawnLocation")
-	if item_spawn_loc == null:
-		print("No item spawn location found")
-		return
-	item_spawn_loc.progress_ratio = randf()
+	for i in range(amount):
+		var item = item_scene.instantiate()
 
-	item.position = item_spawn_loc.position
+		var item_spawn_loc = currentTileMap.get_node("ItemPath/ItemSpawnLocation")
+		if item_spawn_loc == null:
+			print("No item spawn location found")
+			return
+		item_spawn_loc.progress_ratio = randf()
 
-	item.choose_type()
+		item.position = item_spawn_loc.position
 
-	add_child(item)
+		item.choose_type()
+
+		add_child(item)
 
 func _on_hunger_timer_timeout():
 	hunger += 1
@@ -85,6 +86,7 @@ func change_scene(dest, pos):
 			$Player.position = Vector2.ZERO
 	
 	load_npcs(number_of_npcs)
+	spawn_items(number_of_items)
 
 func _on_item_timer_timeout():
 	#spawn_items(1)
@@ -101,6 +103,7 @@ func start_game():
 	$HUD.update_piety(piety)
 	$HungerTimer.start()
 	$ItemTimer.start()
+	$TimeTimer.start()
 	current_time = 6 * 60
 	$HUD.update_time_of_day(current_time / 60, current_time % 60)
 	screen_size = get_viewport().get_visible_rect().size
@@ -108,5 +111,8 @@ func start_game():
 	spawn_items(number_of_items)
 
 func advance_time():
-	current_time += 1
+	current_time += 15
 	$HUD.update_time_of_day(current_time / 60, current_time % 60)
+
+func _on_time_timer_timeout():
+	advance_time()

@@ -12,10 +12,11 @@ func _process(delta):
 	pass
 
 func _on_start_button_pressed():
-	if show_story: get_tree().change_scene_to_file("res://Scenes/main")
+	print("Start button pressed")
+	if show_story:
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
 	$TextureRect.hide()
 	$StartScreenTitle.hide()
 	$StoryText.show()
 	$StartButton.position.y = 900
 	show_story = true
-	

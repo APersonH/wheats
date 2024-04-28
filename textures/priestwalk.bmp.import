@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpax167rl720k"
-path="res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"
+uid="uid://bt2cwvwdfs2ke"
+path="res://.godot/imported/priestwalk.bmp-128a7681b265b5dea4a3f1fc03148162.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/hvede.png"
-dest_files=["res://.godot/imported/hvede.png-a74897caa7836db8dafd019cdf34138d.ctex"]
+source_file="res://textures/priestwalk.bmp"
+dest_files=["res://.godot/imported/priestwalk.bmp-128a7681b265b5dea4a3f1fc03148162.ctex"]
 
 [params]
 
