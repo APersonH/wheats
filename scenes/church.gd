@@ -9,12 +9,17 @@ var messages: Array = [
 		"Yay, the sermon is over! I can finally leave this boring church! \n It is time for wheats!",
 	]
 
+@export var last_sermon = 0
+@export var sermon_times = [7 * 60, 10 * 60, 14 * 60]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ChurchTimer.start()
 	$CanvasLayer/Label.text = messages[message]
-	for i in range(8): get_parent().advance_time()
 	get_parent().update_piety(1)
+	last_sermon += 1
+	get_parent().next_sermon = sermon_times[last_sermon]
+	for i in range(8): get_parent().advance_time()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,10 +32,8 @@ func _on_church_timer_timeout():
 	if message == 2:
 		get_parent().update_hunger(50)
 		get_parent().change_scene("main_map", $"../Player".position)
-		get_parent().next_sermon = 60 * 10
 	if message == 4:
 		get_parent().update_hunger(50)
 		get_parent().change_scene("main_map", $"../Player".position)
-		get_parent().next_sermon = 60 * 14
 	if message == 5:
 		get_parent().change_scene("wheats", $"../Player".position)
