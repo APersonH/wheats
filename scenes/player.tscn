@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wm1r0"]
 [ext_resource type="Texture2D" uid="uid://ckx1cve7vbdp6" path="res://textures/bobnormal.png" id="2_wsvo8"]
-[ext_resource type="Texture2D" uid="uid://13qhqrdldl2g" path="res://textures/bobidle.png" id="3_guxuf"]
+[ext_resource type="Texture2D" uid="uid://317d6lnjly58" path="res://textures/bobidle.png" id="3_guxuf"]
 [ext_resource type="Shape2D" uid="uid://b6w5oy7ee6ekt" path="res://scenes/player_shape.tres" id="3_os43n"]
-[ext_resource type="Texture2D" uid="uid://dfm6eb2jf7iu6" path="res://textures/bobgå.png" id="4_88skk"]
+[ext_resource type="Texture2D" uid="uid://bxk6p78xmbws4" path="res://textures/bobgå.png" id="4_88skk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oa88e"]
 animations = [{

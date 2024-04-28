@@ -5,17 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://cpr43g3x17ga3" path="res://textures/bstile1.png" id="2_ywkyl"]
 [ext_resource type="Texture2D" uid="uid://droquixy6i317" path="res://textures/æble.png" id="3_a2tor"]
 [ext_resource type="Texture2D" uid="uid://dy4kuav0qd4ge" path="res://textures/steak.png" id="4_3vqax"]
-[ext_resource type="Texture2D" uid="uid://b35jrf17pyf72" path="res://textures/hvede.png" id="5_oho8v"]
+[ext_resource type="Texture2D" uid="uid://bpax167rl720k" path="res://textures/hvede.png" id="5_oho8v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aptxs"]
 
 [node name="Item" type="StaticBody2D" groups=["items"]]
 script = ExtResource("1_lh847")
 type_values = {
-0: 2,
-1: 2,
-2: 5,
-3: 10
+0: 5,
+1: 5,
+2: 10,
+3: 20
 }
 type_sprites = [ExtResource("2_let3i"), ExtResource("3_a2tor"), ExtResource("4_3vqax"), ExtResource("5_oho8v")]
 
