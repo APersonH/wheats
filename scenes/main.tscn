@@ -11,9 +11,10 @@
 script = ExtResource("1_wnpfd")
 number_of_npcs = 20
 npc_scene = ExtResource("2_ffnf0")
-hunger = 9001
-currentTileMap = NodePath("MainTileMap")
 item_scene = ExtResource("2_bwfkv")
+currentTileMap = NodePath("MainTileMap")
+hunger = 50
+piety = 5
 
 [node name="Player" parent="." instance=ExtResource("1_dvv4q")]
 scale = Vector2(0.075, 0.075)
@@ -27,6 +28,7 @@ speed = 60
 
 [node name="ItemTimer" type="Timer" parent="."]
 
-[connection signal="change_scene" from="Player" to="." method="_on_player_change_scene"]
+[connection signal="change_scene" from="Player" to="." method="change_scene"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
 [connection signal="timeout" from="HungerTimer" to="." method="_on_hunger_timer_timeout"]
 [connection signal="timeout" from="ItemTimer" to="." method="_on_item_timer_timeout"]

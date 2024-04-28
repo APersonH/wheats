@@ -9,7 +9,8 @@ func _ready():
 	#randomly either 1 or -1
 	move_direction = 1 if randi() % 2 == 0 else - 1
 	change_point = randf()
-	pass
+	
+	$Area2D/AnimatedSprite2D.play("walk")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
