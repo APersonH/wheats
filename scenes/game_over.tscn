@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://djgaeubfj8i57"]
+[gd_scene load_steps=3 format=3 uid="uid://djgaeubfj8i57"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_u3v7g"]
+[ext_resource type="Texture2D" uid="uid://bgpfty0pm57b0" path="res://textures/underworld.bmp" id="2_rouaw"]
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_u3v7g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rouaw")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8

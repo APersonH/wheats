@@ -11,6 +11,7 @@ extends Node
 @export var piety: int
 
 var current_time: int
+var next_sermon: int
 
 var screen_size: Vector2
 var returnPos: Vector2
@@ -22,6 +23,7 @@ func _ready():
 
 func _process(delta):
 	if hunger >= 100 or piety <= 0:
+		print("Hunger: " + str(hunger) + " Piety: " + str(piety))
 		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func load_npcs(amount):
@@ -85,6 +87,9 @@ func change_scene(dest, pos):
 		else:
 			$Player.position = Vector2.ZERO
 	
+	for item in get_tree().get_nodes_in_group("items"):
+		item.queue_free()
+
 	load_npcs(number_of_npcs)
 	spawn_items(number_of_items)
 
@@ -106,6 +111,7 @@ func start_game():
 	$TimeTimer.start()
 	current_time = 6 * 60
 	$HUD.update_time_of_day(current_time / 60, current_time % 60)
+	next_sermon = 7 * 60
 	screen_size = get_viewport().get_visible_rect().size
 	load_npcs(number_of_npcs)
 	spawn_items(number_of_items)
@@ -113,6 +119,8 @@ func start_game():
 func advance_time():
 	current_time += 15
 	$HUD.update_time_of_day(current_time / 60, current_time % 60)
+	if current_time >= next_sermon:
+		update_piety( - 1)
 
 func _on_time_timer_timeout():
 	advance_time()
