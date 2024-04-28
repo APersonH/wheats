@@ -14,7 +14,7 @@ npc_scene = ExtResource("2_ffnf0")
 item_scene = ExtResource("2_bwfkv")
 currentTileMap = NodePath("MainTileMap")
 hunger = 50
-piety = 5
+piety = 1
 
 [node name="Player" parent="." instance=ExtResource("1_dvv4q")]
 scale = Vector2(0.075, 0.075)

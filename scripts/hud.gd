@@ -7,8 +7,8 @@ func update_hunger(hunger):
 func update_piety(piety):
 	$PietyLabel.text = "Piety: " + str(piety)
 
-func update_time_of_day(time_of_day):
-	$TODLabel.text = "Time of Day: " + str(time_of_day)
+func update_time_of_day(time_of_day_hours, time_of_day_minutes):
+	$TODLabel.text = "Time of Day: " + ("%02d" % time_of_day_hours) + ":" + ("%02d" % time_of_day_minutes)
 
 func _on_start_button_pressed():
 	$HungerLabel.show()

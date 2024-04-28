@@ -9,6 +9,7 @@ func _ready():
 	#randomly either 1 or -1
 	move_direction = 1 if randi() % 2 == 0 else - 1
 	change_point = randf()
+	speed = randi() % 35 + 20
 	
 	$Area2D/AnimatedSprite2D.play("walk")
 	
@@ -20,6 +21,7 @@ func _process(delta):
 	if progress_ratio > change_point:
 		move_direction = -move_direction
 		change_point = randf()
+		speed = randi() % 35 + 20
 	
 	$Area2D.global_rotation = 0
 	#flip the sprite if has moved positive compared to before

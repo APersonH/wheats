@@ -56,4 +56,21 @@ text = "Will we eat
 wheats?"
 horizontal_alignment = 1
 
+[node name="StoryText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(1600, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -442.5
+offset_right = 800.0
+offset_bottom = 316.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "You are a poor peasant, living at the end of the 18th century. Tomorrow is The Great Prayer Day, which means you have to fast, from morning until evening, all while having to go to church for every one of the sermons. Unfourtunately, since you are poor, you are very malnourished, and you get hungry very quickly. But no worries! You have a plan! If you are careful, you bet you can sneak in a snack or two, as long as you awert the petty eyes of all of your fellow villagefolk. If they chatch you, you know that they will report you to the priest, and you will be sent to hell. But it will all be worth it! At the end of the day, you know all the bakers have prepered a great feast of warm wheats. Yum!"
+fit_content = true
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

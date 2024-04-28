@@ -1,7 +1,5 @@
 extends Node
 
-enum TimeOfDay {Morning, Afternoon, Evening, Night}
-
 @export var number_of_npcs: int
 @export var npc_scene: PackedScene
 @export var number_of_items: int
@@ -12,7 +10,7 @@ enum TimeOfDay {Morning, Afternoon, Evening, Night}
 @export var hunger: int
 @export var piety: int
 
-var current_time: TimeOfDay
+var current_time: int
 
 var screen_size: Vector2
 var returnPos: Vector2
@@ -23,10 +21,8 @@ func _ready():
 	start_game()
 
 func _process(delta):
-	if hunger >= 100:
-		change_scene("game_over", Vector2.ZERO)
-	if piety <= 0:
-		change_scene("game_over", Vector2.ZERO)
+	if hunger >= 100 or piety <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func load_npcs(amount):
 	npc_list = []
@@ -91,7 +87,8 @@ func change_scene(dest, pos):
 	load_npcs(number_of_npcs)
 
 func _on_item_timer_timeout():
-	spawn_items(1)
+	#spawn_items(1)
+	pass
 
 func get_current_tilemap():
 	return currentTileMap
@@ -104,11 +101,12 @@ func start_game():
 	$HUD.update_piety(piety)
 	$HungerTimer.start()
 	$ItemTimer.start()
-	current_time = TimeOfDay.Morning
+	current_time = 6 * 60
+	$HUD.update_time_of_day(current_time / 60, current_time % 60)
 	screen_size = get_viewport().get_visible_rect().size
 	load_npcs(number_of_npcs)
 	spawn_items(number_of_items)
 
 func advance_time():
 	current_time += 1
-	$HUD.update_time_of_day(TimeOfDay.keys()[current_time])
+	$HUD.update_time_of_day(current_time / 60, current_time % 60)
