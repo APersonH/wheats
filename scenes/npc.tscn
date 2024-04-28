@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cl4vgs5nrunwo"]
 
-[ext_resource type="Texture2D" uid="uid://bipa4thrywp1m" path="res://textures/bagerkringle.png" id="1_2b1y4"]
+[ext_resource type="Texture2D" uid="uid://dkapb7vwd8mjq" path="res://textures/bagerkringle.png" id="1_2b1y4"]
 [ext_resource type="Script" path="res://scenes/npc.gd" id="1_gi3nj"]
 [ext_resource type="Texture2D" uid="uid://bqfvf6c61xdyf" path="res://textures/bagergå.png" id="3_6obgt"]
 [ext_resource type="Texture2D" uid="uid://bb2orxd1dpkp3" path="res://textures/radius.svg" id="4_14bwf"]
